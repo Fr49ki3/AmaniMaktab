@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+/* Language buttons */
+.lang-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0 10px;
+}
+
+.lang-toggle button {
+  flex: 0 1 100px;
+  padding: 10px;
+  background: green;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.lang-toggle button.active {
+  outline: 2px solid #fff;
+}
+
+.lang-toggle button.flash-red {
+  background-color: red !important;
+}
+
+/* Quick Links as buttons */
+.quicklinks {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #222;
+}
+
+.quicklinks a {
+  background: green;
+  color: black;
+  padding: 10px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.quicklinks a:hover {
+  background: #0f0;
+}
+
+.quicklinks a.flash-red {
+  background-color: red !important;
+}
+
+/* Hero layout */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.hero-images {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hero-img {
+  max-width: 200px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+/* Text */
+.hero-text h1, .subtitle {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+}
+
+/* Sections */
+section {
+  padding: 50px 20px;
+  border-top: 1px solid #444;
+}
+section h2 {
+  margin-bottom: 10px;
+}
+
+/* Footer map */
+.map-footer {
+  padding: 30px 20px;
+  border-top: 1px solid #444;
+}
+.map-img {
+  max-width: 90%;
+  height: auto;
+  border: 2px solid #555;
+  border-radius: 4px;
+}
+.address {
+  margin-top: 8px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Language visibility */
+.lang-en, .lang-ps {
+  display: none;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    padding: 40px;
+  }
+  .hero-images {
+    margin-right: 40px;
+  }
+}
+

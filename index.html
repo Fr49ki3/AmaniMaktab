@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>King Amanullah Khan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button onclick="setLang('en')" class="active">English</button>
+    <button onclick="setLang('ps')">پښتو</button>
+  </div>
+
+  <!-- Quick Links -->
+  <div class="quicklinks">
+    <a href="#early-life">Early Life</a>
+    <a href="#liberator">Liberator</a>
+    <a href="#vision">Vision</a>
+    <a href="#modernizer">Modernizer</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#death">Death & Burial</a>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-images">
+      <img src="portrait.png" alt="King Amanullah portrait" class="hero-img">
+      <img src="ghazi.png" alt="King Amanullah walk with soldiers" class="hero-img">
+    </div>
+    <div class="hero-text">
+      <h1 class="lang-en">King Amanullah Khan</h1>
+      <h1 class="lang-ps">غا زي امان‌الله خان</h1>
+      <p class="subtitle lang-en">Modernizer · Visionary · Liberator</p>
+      <p class="subtitle lang-ps">مډرن‌کونکی · لید‌لرونکی · ازاد‌کوونکی</p>
+    </div>
+  </header>
+
+  <!-- Content Sections -->
+  <section id="early-life"><h2>Early Life</h2></section>
+  <section id="liberator"><h2>Liberator</h2></section>
+  <section id="vision"><h2>Vision</h2></section>
+  <section id="modernizer"><h2>Modernizer</h2></section>
+  <section id="achievements"><h2>Achievements</h2></section>
+  <section id="death"><h2>Death & Burial</h2></section>
+
+  <!-- Local Map -->
+  <footer class="map-footer">
+    <img src="Kabul_City_Map.svg" alt="Map of Kabul" class="map-img">
+    <p class="address">چار قلعه، کابل، افغانستان</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-en').forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+      document.querySelectorAll('.lang-ps').forEach(e => e.style.display = lang === 'ps' ? 'block' : 'none');
+
+      const buttons = document.querySelectorAll('.lang-toggle button');
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.classList.remove('flash-red');
+      });
+
+      const clickedButton = lang === 'en' ? buttons[0] : buttons[1];
+      clickedButton.classList.add('active');
+      clickedButton.classList.add('flash-red');
+      setTimeout(() => clickedButton.classList.remove('flash-red'), 7000);
+    }
+
+    setLang('en');
+
+    document.querySelectorAll('.quicklinks a').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const section = document.querySelector(btn.getAttribute('href'));
+        section.scrollIntoView({ behavior: 'smooth' });
+
+        btn.classList.add('flash-red');
+        setTimeout(() => btn.classList.remove('flash-red'), 7000);
+      });
+    });
+  </script>
+</body>
+</html>
+
+
